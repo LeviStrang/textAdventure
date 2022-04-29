@@ -1,6 +1,6 @@
 package com.project.learnprogramming;
 
-public class Room  extends Thing {
+public class Room extends Thing {
 
     private int n, s, e, w;
 

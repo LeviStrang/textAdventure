@@ -38,7 +38,7 @@ public class Adventurer extends Thing {
         hasArmour = false;
         armour = null;
         weapon = null;
-        wallet = new Wallet();
+        wallet = new Wallet("Walter the Wallet", "It's brown... \nIt's a wallet... \nwhat did you expect to hear?");
         location = someRoom;
 
     }

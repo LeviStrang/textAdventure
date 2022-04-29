@@ -1,11 +1,11 @@
 package com.project.learnprogramming;
 
-public class Wallet {
+public class Wallet extends Thing {
 
     private int benjamins;
 
-    public Wallet(){
-
+    public Wallet(String someName, String someDescription){
+    super(someName, someDescription);
         benjamins = 0;
     }
 

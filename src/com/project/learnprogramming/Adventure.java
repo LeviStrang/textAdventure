@@ -5,7 +5,7 @@ import java.util.*;
 public class Adventure {
 
 
-    public static List<String> listWithWords(String input){
+    public static List<String> userInputFormatter(String input){
 
         String charToSpitOn = ",.:;?!\\/[]|@#$%^&*()=+`~";
         List<String> liststr = new ArrayList<>();
@@ -19,22 +19,22 @@ public class Adventure {
         return liststr;
     }
 
-    public String caseFormatter(String userInput) {
-        List<String> listOfWords;
-
-        String response = "sure";
-        String stringFormat = userInput.trim().toLowerCase();
-
-        if (!stringFormat.equals("q")) {
-            if (stringFormat.equals("")) {
-                response = "lets not waste time... type something";
-            } else {
-                listOfWords = listWithWords(stringFormat);
-//                response = readInput(listOfWords);
-            }
-        }
-        return response;
-    }
+//    public String caseFormatter(String userInput) {
+//        List<String> listOfWords;
+//
+//        String response = "sure";
+//        String stringFormat = userInput.trim().toLowerCase();
+//
+//        if (!stringFormat.equals("q")) {
+//            if (stringFormat.equals("")) {
+//                System.out.println("lets not waste time... type something");
+//            } else {
+//                listOfWords = listWithWords(stringFormat);
+////                response = readInput(listOfWords);
+//            }
+//        }
+//        return response;
+//    }
 
     private ArrayList<Room> map;
 
@@ -45,11 +45,11 @@ public class Adventure {
         int deadEnd = -1;
 
         map.add(new Room("Street", "You find yourself standing on the sidewalk just outside a Starbucks. " +
-                "Don't worry, no one judges you for being addicted to coffee... " +
-                "that's all part of the American Dream.", 2, 1, deadEnd, deadEnd)); //0
+                "\nDon't worry, no one judges you for being addicted to coffee... " +
+                "\nThat's all part of the American Dream.", 2, 1, deadEnd, deadEnd)); //0
         map.add(new Room("StarBucks","description", 0, deadEnd, deadEnd, deadEnd)); //1
         map.add(new Room("Escape Room","You walk into what looks to be a run down warehouse. " +
-                "In front of you, you see a flimsy folding table with a man behind it giving you the stink eye.", 9, 0, 3, 4)); //2
+                "\nIn front of you, you see a flimsy folding table with a man behind it giving you the stink eye.", 9, 0, 3, 4)); //2
         map.add(new Room("Old Lady's House","description", deadEnd, deadEnd, deadEnd, 2)); //3
         map.add(new Room("Ally","description", deadEnd, deadEnd, 2, 5)); //4
         map.add(new Room("City Limits","description", 7, deadEnd, 4, 6)); //5

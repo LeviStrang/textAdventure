@@ -1,11 +1,14 @@
 package com.project.learnprogramming;
 
-public abstract class Armour {
+public abstract class Armour extends Thing {
 
     private int durability;
-    private String name;
     private int maxBlockableDamage;
     private int blockedDamage;
+
+    public Armour(String someName, String someDescription) {
+        super(someName, someDescription);
+    }
 
     public int getDurability() {
         return durability;
@@ -13,14 +16,6 @@ public abstract class Armour {
 
     public void setDurability(int durability) {
         this.durability = durability;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getBlockedDamage() {
