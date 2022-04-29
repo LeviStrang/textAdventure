@@ -1,6 +1,6 @@
 package com.project.learnprogramming;
 
-public class Adventurer {
+public class Adventurer extends Thing {
 
     //Move method - allows adventurer to move north, west, east, or south
 
@@ -16,7 +16,6 @@ public class Adventurer {
 
     private int attackDamage;
     private int health;
-    private String name;
     private int poundsOfFood;
     private boolean weaponEquipped;
     private boolean hasWeapon;
@@ -24,13 +23,15 @@ public class Adventurer {
     private Armour armour;
     private Weapon weapon;
     private Wallet wallet;
+    private Room location;
 
 
-    public Adventurer()
+    public Adventurer(String someName, String someDescription, Room someRoom)
     {
+        super(someName, someDescription);
+
         attackDamage = 25;
         health = 100;
-        name = "";
         poundsOfFood = 0;
         weaponEquipped = false;
         hasWeapon = false;
@@ -38,7 +39,15 @@ public class Adventurer {
         armour = null;
         weapon = null;
         wallet = new Wallet();
+        location = someRoom;
 
     }
 
+    public void setLocation(Room location) {
+        this.location = location;
+    }
+
+    public Room getLocation(){
+        return location;
+    }
 }
