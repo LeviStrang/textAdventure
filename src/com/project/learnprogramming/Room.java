@@ -1,16 +1,14 @@
 package com.project.learnprogramming;
 
+import java.awt.*;
+
 public class Room extends Thing {
 
     private int n, s, e, w;
 
-    public Room (String someName, String someDescription, int north, int south, int east, int west){
+    public Room (String someName, String someDescription){
         super(someName, someDescription);
 
-        this.n = north;
-        this.s = south;
-        this.w = west;
-        this.e = east;
     }
 
     public int getN() {

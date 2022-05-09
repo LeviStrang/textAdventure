@@ -1,5 +1,7 @@
 package com.project.learnprogramming;
 
+import java.util.HashMap;
+
 public class Adventurer extends Thing {
 
     //Move method - allows adventurer to move north, west, east, or south
@@ -20,13 +22,13 @@ public class Adventurer extends Thing {
     private boolean weaponEquipped;
     private boolean hasWeapon;
     private boolean hasArmour;
-    private Armour armour;
+    private Armor armor;
     private Weapon weapon;
     private Wallet wallet;
-    private Room location;
+    private Coordinates location;
 
 
-    public Adventurer(String someName, String someDescription, Room someRoom)
+    public Adventurer(String someName, String someDescription)
     {
         super(someName, someDescription);
 
@@ -36,18 +38,35 @@ public class Adventurer extends Thing {
         weaponEquipped = false;
         hasWeapon = false;
         hasArmour = false;
-        armour = null;
+        armor = null;
         weapon = null;
         wallet = new Wallet("Walter the Wallet", "It's brown... \nIt's a wallet... \nwhat did you expect to hear?");
-        location = someRoom;
+        location = new Coordinates (0,1);
+
 
     }
 
-    public void setLocation(Room location) {
+    public void move(String input){
+
+        if (input.contentEquals( "north")){
+            location.addToY();
+        }
+        else if (input.contentEquals("south")){
+            location.subFromY();
+        }
+        else if (input.contentEquals("east")){
+            location.addToX();
+        }
+        else if (input.contentEquals("west")){
+            location.subFromX();
+        }
+    }
+
+    public void setLocation(Coordinates location) {
         this.location = location;
     }
 
-    public Room getLocation(){
+    public Coordinates getLocation(){
         return location;
     }
 }

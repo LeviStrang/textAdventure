@@ -10,8 +10,10 @@ public class Main {
 
         Scanner input = new Scanner(System.in);
         Random random = new Random();
-        Adventure adventure = new Adventure();
-
+        System.out.println("What is your name?");
+        System.out.print("$ ");
+        String userName = input.nextLine();
+        Adventure adventure = new Adventure(userName);
         String userInput;
         adventure.setScene();
 

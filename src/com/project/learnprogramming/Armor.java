@@ -1,12 +1,12 @@
 package com.project.learnprogramming;
 
-public abstract class Armour extends Thing {
+public abstract class Armor extends Thing {
 
     private int durability;
     private int maxBlockableDamage;
     private int blockedDamage;
 
-    public Armour(String someName, String someDescription) {
+    public Armor(String someName, String someDescription) {
         super(someName, someDescription);
     }
 
