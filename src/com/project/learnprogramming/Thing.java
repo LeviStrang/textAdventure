@@ -1,6 +1,6 @@
 package com.project.learnprogramming;
 
-public class Thing {
+public abstract class Thing {
 
 
     private String name;
@@ -29,4 +29,7 @@ public class Thing {
     }
 
 
+    public abstract String toString(String someName, String someDescription);
+
+    public abstract String toString(Object object);
 }

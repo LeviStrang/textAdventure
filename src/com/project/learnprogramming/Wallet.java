@@ -1,12 +1,22 @@
 package com.project.learnprogramming;
 
-public class Wallet extends Thing {
+public class Wallet extends Item {
 
     private int benjamins;
 
     public Wallet(String someName, String someDescription){
     super(someName, someDescription);
         benjamins = 0;
+    }
+
+    @Override
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    @Override
+    public int getWeight() {
+        return weight;
     }
 
     public int getBenjamins() {

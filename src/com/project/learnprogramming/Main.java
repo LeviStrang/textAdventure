@@ -1,7 +1,5 @@
 package com.project.learnprogramming;
 
-import com.project.learnprogramming.Adventure;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -9,22 +7,25 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        Random random = new Random();
         System.out.println("What is your name?");
         System.out.print("$ ");
         String userName = input.nextLine();
-        Adventure adventure = new Adventure(userName);
+        InputHandler inputHandler = new InputHandler();
+        Adventurer adventurer = new Adventurer("","");
+        GameMap map = new GameMap();
         String userInput;
-        adventure.setScene();
+        inputHandler.setScene();
+        map.printCurrentRoom(adventurer.getLocation());
+
+//        GameMap.CSVReader();
 
         do {
             System.out.print("$ ");
             userInput = input.nextLine();
-            System.out.println(userInput);
+            InputHandler.userInputHandler(userInput);
         }
 
-        while (!"quit".equals(userInput));
-
+        while (!"quit".equals(userInput) || adventurer.getHealth() > 0);
+        //look into using Enums for n s e w
     }
-
 }

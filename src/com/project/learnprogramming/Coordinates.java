@@ -2,11 +2,24 @@ package com.project.learnprogramming;
 
 public class Coordinates {
 
-    private  int x;
-    private  int y;
+    private int x;
+    private int y;
 
     public Coordinates(int x, int y){
+    this.x = x;
+    this.y = y;
+    }
 
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Coordinates)){
+            return false;
+        }
+        Coordinates moreCoordinates = (Coordinates) obj;
+        return (moreCoordinates.getX() == this.x && moreCoordinates.getY() == this.y);
+    }
+    @Override
+    public int hashCode(){
+        return x + y;
     }
 
     public void setX(int x){

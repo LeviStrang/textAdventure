@@ -1,8 +1,9 @@
 package com.project.learnprogramming;
 
 import java.util.HashMap;
+import java.util.Map;
 
-public class Adventurer extends Thing {
+public class Adventurer {
 
     //Move method - allows adventurer to move north, west, east, or south
 
@@ -26,11 +27,10 @@ public class Adventurer extends Thing {
     private Weapon weapon;
     private Wallet wallet;
     private Coordinates location;
-
+    private Inventory inventory;
 
     public Adventurer(String someName, String someDescription)
     {
-        super(someName, someDescription);
 
         attackDamage = 25;
         health = 100;
@@ -43,7 +43,14 @@ public class Adventurer extends Thing {
         wallet = new Wallet("Walter the Wallet", "It's brown... \nIt's a wallet... \nwhat did you expect to hear?");
         location = new Coordinates (0,1);
 
+    }
 
+    public Coordinates getLocation(){
+        return this.location;
+    }
+
+    public void setLocation(Coordinates location) {
+        this.location = location;
     }
 
     public void move(String input){
@@ -62,11 +69,7 @@ public class Adventurer extends Thing {
         }
     }
 
-    public void setLocation(Coordinates location) {
-        this.location = location;
-    }
-
-    public Coordinates getLocation(){
-        return location;
+    public int getHealth(){
+        return this.health;
     }
 }
